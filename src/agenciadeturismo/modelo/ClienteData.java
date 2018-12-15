@@ -127,17 +127,18 @@ public Cliente buscarCliente(int id){
 /*INICIO METODO BUSCAR DAVID ****************************************************************************/
 /*************************************************************************************************/
 
-public Cliente buscarClientePorNombre(String nombre){
+public Cliente buscarClientePorNombre(String nombre, String dni){
      Cliente cliente = null;
         try {
            
             
             
             
-            String sql = "SELECT * FROM cliente  WHERE nombre_apellido LIKE ?;";
+            String sql = "SELECT * FROM cliente  WHERE nombre_apellido LIKE ? AND dni = ?;";
             
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, "%" +nombre +"%" );
+            ps.setString(2, dni  );
             ResultSet resultSet = ps.executeQuery();
             
             
