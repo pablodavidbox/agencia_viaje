@@ -44,6 +44,14 @@ public class Paquete {
     public Alojamiento getAlojamiento() {
         return alojamiento;
     }
+    
+    public int getIdAlojamiento() {
+        return alojamiento.getId();
+    }
+    
+    public int getIdTraslado() {
+        return traslado.getId();
+    }    
 
     public void setAlojamiento(Alojamiento alojamiento) {
         this.alojamiento = alojamiento;

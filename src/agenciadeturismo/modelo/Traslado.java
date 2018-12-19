@@ -12,16 +12,14 @@ package agenciadeturismo.modelo;
 public class Traslado {
 
 
-    
-    
-    private int id= -1 ;
+        private int id= -1 ;
     private String tipo_vehiculo;
     private int cant_max_pasajero;
-    private int costo_por_km;
+    private double costo_por_km;
     
     
 
-    public Traslado(String tipo_vehiculo, int cant_max_pasajero, int costo_por_km) {
+    public Traslado(String tipo_vehiculo, int cant_max_pasajero, double costo_por_km) {
         this.tipo_vehiculo = tipo_vehiculo;
         this.cant_max_pasajero = cant_max_pasajero;
         this.costo_por_km = costo_por_km;
@@ -61,13 +59,12 @@ public class Traslado {
         this.cant_max_pasajero = cant_max_pasajero;
     }
 
-    public int getCosto_por_km() {
+    public double getCosto_por_km() {
         return costo_por_km;
     }
 
-    public void setCosto_por_km(int costo_por_km) {
+    public void setCosto_por_km(double costo_por_km) {
         this.costo_por_km = costo_por_km;
     }
-    
     
 }

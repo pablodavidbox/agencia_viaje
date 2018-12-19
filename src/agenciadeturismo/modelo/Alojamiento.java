@@ -13,7 +13,7 @@ public class Alojamiento {
     
 
     
-     private int id= -1 ;
+    private int id= -1 ;
     private String nombre;
     private String direccion;
     private int cantidad_cama;
@@ -32,10 +32,21 @@ public class Alojamiento {
     public Alojamiento(int id) {
         
         this.id = id;
+    } 
+    
+    public Alojamiento(){
+     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
-     public Alojamiento(){
-     }
+    
+    
 
     public String getNombre() {
         return nombre;

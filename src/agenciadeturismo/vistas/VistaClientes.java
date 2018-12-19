@@ -153,7 +153,7 @@ private Conexion conexion;
         // TODO add your handling code here:
         
         
-                String nombre=jtNombre.getText();
+        String nombre=jtNombre.getText();
         String valordni = jtDni.getText();
         Integer dni = Integer.parseInt(valordni);
         String valorcelular = jtCelular.getText();
