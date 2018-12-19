@@ -5,12 +5,27 @@
  */
 package agenciadeturismo.vistas;
 
+
+import agenciadeturismo.modelo.Cliente;
+import agenciadeturismo.modelo.ClienteData;
+import agenciadeturismo.modelo.Conexion;
+import agenciadeturismo.AgenciaDeTurismo;
+import agenciadeturismo.modelo.AlojamientoData;
+import agenciadeturismo.modelo.TrasladoData;
+import com.sun.media.sound.AlawCodec;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author pablo
  */
 public class VistaAdministrarPaquetes extends javax.swing.JInternalFrame {
 
+private TrasladoData trasladoData;
+private AlojamientoData alojamientoData;
+private Conexion conexion;       
+    
     /**
      * Creates new form VistaAdministrarPaquetes
      */
