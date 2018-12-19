@@ -24,11 +24,17 @@ public class PaqueteData {
     
     private  int id_alojamiento;
     private int id_traslado;
+    private AlojamientoData alojamiento_data_aux = null;
+    private TrasladoData traslado_data_aux = null ;
+    private Alojamiento alojamiento = null;
+    private Traslado traslado = null ;
+    private Conexion guardar_conexion ;
         
     private Connection con;
 
     public PaqueteData (Conexion conexion) {
       con= conexion.getConexion();
+      guardar_conexion = conexion;
       
     }
     
@@ -100,7 +106,8 @@ public class PaqueteData {
 
 public Paquete buscarPaquete(int id){
     
- Paquete paquete = null;
+        Paquete paquete = null;
+        
         try {
             
            String sql = "SELECT * FROM paquete  WHERE id=?;";
@@ -115,8 +122,8 @@ public Paquete buscarPaquete(int id){
                 paquete = new Paquete();
                 paquete.setId(resultSet.getInt("id"));
                 paquete.setDescripcion(resultSet.getString("nombre _descripcion"));
-                paquete.setAlojamiento(resultSet.getInt("id_alojamiento"));
-                paquete.setTraslado(resultSet.getInt("id_traslado"));
+                paquete.setIdAlojamiento(resultSet.getInt("id_alojamiento"));
+                paquete.setIdTraslado(resultSet.getInt("id_traslado"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(PaqueteData.class.getName()).log(Level.SEVERE, null, ex);
@@ -129,7 +136,12 @@ public Paquete buscarPaquete(int id){
 /*************************************************************************************************/
 
 public Paquete buscarPaquetePorNombre(String nombre){
+    
      Paquete paquete = null;
+     
+     alojamiento_data_aux = new AlojamientoData(guardar_conexion);
+     traslado_data_aux = new TrasladoData(guardar_conexion);
+     
         try {
            
             
@@ -146,16 +158,23 @@ public Paquete buscarPaquetePorNombre(String nombre){
                 
                 paquete = new Paquete();
                 paquete.setId(resultSet.getInt("id"));
-                paquete.setNombre(resultSet.getString("nombre _descripcion"));
-                paquete.setDni(resultSet.getInt("id_alojamiento"));
-                paquete.setCelular(resultSet.getInt("id_traslado"));
+                paquete.setDescripcion(resultSet.getString("nombre _descripcion"));
+                paquete.setIdAlojamiento(resultSet.getInt("id_alojamiento"));
+                paquete.setIdTraslado(resultSet.getInt("id_traslado"));
             }
             
-            
+            alojamiento = alojamiento_data_aux.buscarAlojamiento(paquete.getIdAlojamiento());
+            traslado = traslado_data_aux.buscarTraslado(paquete.getIdTraslado());
+            paquete.setAlojamiento(alojamiento);
+            paquete.setTraslado(traslado);
            
         } catch (SQLException ex) {
             Logger.getLogger(PaqueteData.class.getName()).log(Level.SEVERE, null, ex);
         } 
+        
+           
+           
+        
         return paquete;
 }   
 /*FIN METODO BUSCAR DAVID ****************************************************************************/
@@ -176,9 +195,9 @@ public List<Paquete> obtenerPaquetes(){
                 
                 paquete = new Paquete();
                 paquete.setId(resultSet.getInt("id"));
-                paquete.setNombre(resultSet.getString("nombre _descripcion"));
-                paquete.setDni(resultSet.getInt("id_alojamiento"));
-                paquete.setCelular(resultSet.getInt("id_traslado"));
+                paquete.setDescripcion(resultSet.getString("nombre _descripcion"));
+                paquete.setIdAlojamiento(resultSet.getInt("id_alojamiento"));
+                paquete.setIdTraslado(resultSet.getInt("id_traslado"));
                 
                 paquetes.add(paquete);
             }  

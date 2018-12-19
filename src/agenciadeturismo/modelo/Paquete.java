@@ -16,6 +16,8 @@ public class Paquete {
    private String descripcion;
    private Alojamiento alojamiento;
    private Traslado traslado;
+   private int idAlojamiento;
+   private int idTraslado;
    private int idpaquete;
 
     public Paquete(String descripcion, Alojamiento alojamiento, Traslado traslado, int idpaquete) {
@@ -25,6 +27,12 @@ public class Paquete {
         this.idpaquete = idpaquete;
     }
 
+    
+    public Paquete(){
+        
+        
+    }
+    
     public int getId() {
         return id;
     }
@@ -51,7 +59,15 @@ public class Paquete {
     
     public int getIdTraslado() {
         return traslado.getId();
-    }    
+    } 
+    
+    public void setIdAlojamiento(int id) {
+        this.idAlojamiento = id;
+    }
+    
+    public void setIdTraslado(int id) {
+        this.idTraslado = id;
+    }      
 
     public void setAlojamiento(Alojamiento alojamiento) {
         this.alojamiento = alojamiento;
