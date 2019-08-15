@@ -35,6 +35,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -43,6 +47,18 @@ public class Principal extends javax.swing.JFrame {
         CrearCliente = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+
+        jMenu2.setText("File");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +106,24 @@ public class Principal extends javax.swing.JFrame {
         Cliente.add(jMenuItem3);
 
         jMenuBar1.add(Cliente);
+
+        jMenu5.setText("Alojamientos");
+
+        jMenuItem1.setText("Crear Alojamiento");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearAlojamientoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem1);
+
+        jMenuItem4.setText("Buscar Alojamiento");
+        jMenu5.add(jMenuItem4);
+
+        jMenuItem5.setText("Eliminar Alojamiento");
+        jMenu5.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,6 +176,17 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BuscarClienteActionPerformed
 
+    private void CrearAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearAlojamientoActionPerformed
+        // TODO add your handling code here:
+        /*
+            escritorio.removeAll();
+            escritorio.repaint();
+            VistaClientes aloj=new VistaAlojamiento();
+            aloj.setVisible(true);
+            escritorio.add(aloj);
+            escritorio.moveToFront(aloj);*/
+    }//GEN-LAST:event_CrearAlojamientoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -183,8 +228,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem CrearCliente;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
