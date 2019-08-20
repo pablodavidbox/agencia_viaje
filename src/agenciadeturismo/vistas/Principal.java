@@ -11,6 +11,7 @@ import agenciadeturismo.vistas.VistaBuscarClientes;
 import agenciadeturismo.modelo.Conexion;
 import agenciadeturismo.modelo.Cliente;
 import agenciadeturismo.modelo.ClienteData;
+import agenciadeturismo.vistas.VistaAlojamientos;
 
 /**
  *
@@ -178,13 +179,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void CrearAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearAlojamientoActionPerformed
         // TODO add your handling code here:
-        /*
+        
             escritorio.removeAll();
             escritorio.repaint();
-            VistaClientes aloj=new VistaAlojamiento();
+            VistaAlojamientos aloj=new VistaAlojamientos();
             aloj.setVisible(true);
             escritorio.add(aloj);
-            escritorio.moveToFront(aloj);*/
+            escritorio.moveToFront(aloj);
     }//GEN-LAST:event_CrearAlojamientoActionPerformed
 
     /**
